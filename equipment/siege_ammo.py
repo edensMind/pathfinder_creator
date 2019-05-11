@@ -1,0 +1,1 @@
+siege_ammo = [['Ballista net', '75 gp', '15 lbs.'],['Flak', '500 gp', '30 lbs.'],['Flechette bolt', '30 gp', '20 lbs.'],['Weighted bolt', '50 gp', '40 lbs.']]

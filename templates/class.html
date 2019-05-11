@@ -1,0 +1,155 @@
+<div class="tab" id="class_tab">
+	<h1>Select Your Class</h1>
+
+	<!-- set class inputs - hidden -->
+	<input style="display: none;" type="text" id="class_input" name="class" value="Barbarian">
+	<input style="display: none;" type="text" id="fav_input" name="favorite_enemy" value="">
+	<input style="display: none;" type="text" id="bloodline_input" name="bloodline" value="Arcane">
+
+	<input style="display: none;" type="text" id="school_input" name="school" value="Universalist">
+	<input style="display: none;" type="text" id="bond_input" name="bond" value="Amulet">
+
+
+	<div id="class_container">
+
+		<div id="class_buttons">
+			<a id="Barbarian" href="javascript:void(0);" onclick="change_class(0);" class="active_class">Barbarian</a> <br/>
+			<a id="Bard" href="javascript:void(0);" onclick="change_class(1);" class="class_button">Bard</a> <br/>
+			<a id="Cleric" href="javascript:void(0);" onclick="change_class(2);" class="class_button">Cleric</a> <br/>
+			<a id="Druid" href="javascript:void(0);" onclick="change_class(3);" class="class_button">Druid</a> <br/>
+			<a id="Fighter" href="javascript:void(0);" onclick="change_class(4);" class="class_button">Fighter</a> <br/>
+			<a id="Monk" href="javascript:void(0);" onclick="change_class(5);" class="class_button">Monk</a> <br/>
+			<a id="Paladin" href="javascript:void(0);" onclick="change_class(6);" class="class_button">Paladin</a> <br/>
+			<a id="Ranger" href="javascript:void(0);" onclick="change_class(7);" class="class_button">Ranger</a> <br/>
+			<a id="Rogue" href="javascript:void(0);" onclick="change_class(8);" class="class_button">Rogue</a> <br/>
+			<a id="Sorcerer" href="javascript:void(0);" onclick="change_class(9);" class="class_button">Sorcerer</a> <br/>
+			<a id="Wizard" href="javascript:void(0);" onclick="change_class(10);" class="class_button">Wizard</a>
+		</div>
+
+		<div id="class_pics">
+			<div id="class_pic">
+			</div>
+		</div>
+
+		<div id="class_text">
+			<p>
+			<span id="race_title">Barbarian</span>
+			<br/> For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.
+			<br/><br/>
+			<b>Role:</b> Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves. With rage granting them boldness and daring beyond that of most other warriors, barbarians charge furiously into battle and ruin all who would stand in their way.
+			<br/><br/>
+			<b>Alignment:</b> Any nonlawful.
+			<br/><br/>
+			<b>Hit Die:</b> d12.
+			</p>
+		</div>
+
+	</div>
+	<!-- //////////////////////////////////////////// -->
+
+
+	<!-- Ranger Only -->
+	<div class="class_special" id="favored_con" onload="set_fav_emeny('XX');">
+		<h1>Choose a Favored Enemy</h1>
+		<div id="fav_enemy_buttons">
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Aberration</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Animal</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Construct</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Dragon</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Fey</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (aquatic)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (dwarf)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (elf)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (giant)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (goblinoid)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (gnoll)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (gnome)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (halfling)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (human)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (orc)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (reptilian)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Humanoid (other subtype)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Magical beast</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Monstrous humanoid</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Ooze</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (air)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (chaotic)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (earth)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (evil)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (fire)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (good)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (lawful)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (native)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Outsider (water)</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Plant</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Undead</span>
+			<span class="fav_enemy_button" onclick="set_fav_emeny.call(this);">Vermin</span>
+		</div>
+	</div>
+
+	<!-- Sorcerer Only -->
+	<div class="class_special" id="bloodline_con">
+		<h1>Choose a Bloodline</h1>
+		<div id="blood_box">
+			<div id="blood_button_box">
+
+			</div>
+			<div id="blood_desc_box">
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Wizard Only -->
+	<div class="class_special" id="bond_con">
+		<h1>Choose an Arcane School</h1>
+		<div id="school_box">
+			<div id="school_button_box">
+
+			</div>
+			<div id="school_desc_box">
+
+			</div>
+		</div>
+
+
+		<h1>Choose an Arcane Bond</h1>
+		<div id="bond_button_box">
+
+		</div>
+	</div>
+
+	<div class="class_special" id="school_con">	</div>
+
+
+	<!-- //////////////////////////////////////////// -->
+	<h1>Class Features</h1>
+	<div id="class_features">
+		<a target="_blank" href="http://paizo.com/pathfinderRPG/prd/coreRulebook/classes/barbarian.html">Click here for a fully detailed list of class features.</a>
+
+		<p>
+			<b>Weapon and Armor Proficiency:</b> A barbarian is proficient with all simple and martial weapons, light armor, medium armor, and shields (except tower shields).
+			<br/><br/>
+
+			<b>Fast Movement:</b> A barbarian's land speed is faster than the norm for her race by +10 feet. This benefit applies only when she is wearing no armor, light armor, or medium armor, and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus stacks with any other bonuses to the barbarian's land speed.
+			<br/><br/>
+
+			<b>Rage:</b> A barbarian can call upon inner reserves of strength and ferocity, granting her additional combat prowess. Starting at 1st level, a barbarian can rage for a number of rounds per day equal to 4 + her Constitution modifier. At each level after 1st, she can rage for 2 additional rounds. Temporary increases to Constitution, such as those gained from rage and spells like bear's endurance, do not increase the total number of rounds that a barbarian can rage per day. A barbarian can enter rage as a free action. The total number of rounds of rage per day is renewed after resting for 8 hours, although these hours do not need to be consecutive.
+			<br/><br/>
+
+			<b>Rage Powers:</b> As a barbarian gains levels, she learns to use her rage in new ways. Starting at 2nd level, a barbarian gains a rage power. She gains another rage power for every two levels of barbarian attained after 2nd level. A barbarian gains the benefits of rage powers only while raging, and some of these powers require the barbarian to take an action first. Unless otherwise noted, a barbarian cannot select an individual power more than once.
+			<br/><br/>
+
+			<b>Uncanny Dodge:</b> At 2nd level, a barbarian gains the ability to react to danger before her senses would normally allow her to do so. She cannot be caught flat-footed, nor does she lose her Dexterity bonus to AC if the attacker is invisible. She still loses her Dexterity bonus to AC if immobilized. A barbarian with this ability can still lose her Dexterity bonus to AC if an opponent successfully uses the feint action against her.
+			<br/><br/>
+
+			<b>Damage Reduction:</b> At 7th level, a barbarian gains damage reduction. Subtract 1 from the damage the barbarian takes each time she is dealt damage from a weapon or a natural attack. At 10th level, and every three barbarian levels thereafter (13th, 16th, and 19th level), this damage reduction rises by 1 point. Damage reduction can reduce damage to 0 but not below 0.
+		</p>
+				
+	</div>
+
+
+	<br/>
+
+
+</div>

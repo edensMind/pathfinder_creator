@@ -1,0 +1,110 @@
+<div class="tab" id="ability_score">
+	<h1>Ability Scores</h1>
+
+<!-- 	set number of maximum points
+	Low Fantasy	10
+	Standard Fantasy	15
+	High Fantasy	20
+	Epic Fantasy	25 -->
+	<div id="fant_holder">
+		<span onclick="set_total_points(this, 10);" class="fantButton">Low Fantasy 10</span>
+		<span onclick="set_total_points(this, 15);" class="active_fant">Standard Fantasy 15</span>
+		<span onclick="set_total_points(this, 20);" class="fantButton">High Fantasy 20</span>
+		<span onclick="set_total_points(this, 25);" class="fantButton">Epic Fantasy 25</span>
+	</div>
+
+	<table id="ability_table" style="margin:1em auto;">
+		<!-- header -->
+		<tr>
+			<th>Ability</th>
+			<th>Purchased</th>
+			<th>Cost</th>
+
+			<th>Base Mod</th>
+			<th>Racial Bonus</th>
+			<th>Total Score</th>
+			<th>Total Mod</th>
+			
+		</tr>
+		<!-- Strength -->
+		<tr>
+			<td class="ability_title">Strength</td>
+			<td><input class="spinner" name="str" id="str" value="10"></td>
+			<td class="_cost" id="str_cost">1</td>
+
+			<td class="_bmod" id="str_bmod">0</td>
+			<td class="_rbon" id="str_rbon"><span class="bonus_button" onclick="racial_bonus(this,0);"></span>0</td>
+			<td class="_tota" id="str_total">10</td>
+			<td class="_tmod" id="str_tmod">0</td>
+		</tr>
+		<!-- Dexterity -->
+		<tr>
+			<td class="ability_title">Dexterity</td>
+			<td><input class="spinner" name="dex" id="dex" value="10"></td>
+			<td class="_cost" id="dex_cost">1</td>
+
+			<td class="_bmod" id="dex_bmod" >0</td>
+			<td class="_rbon" id="dex_rbon" ><span class="bonus_button" onclick="racial_bonus(this,1);"></span>0</td>
+			<td class="_tota" id="dex_total" >10</td>
+			<td class="_tmod" id="dex_tmod" class="_tmod">0</td>
+		</tr>
+		<!-- Constitution -->
+		<tr>
+			<td class="ability_title">Constitution</td>
+			<td><input class="spinner" name="con" id="con" value="10"></td>
+			<td class="_cost" id="con_cost">1</td>
+
+			<td class="_bmod" id="con_bmod">0</td>
+			<td class="_rbon" id="con_rbon"><span class="bonus_button" onclick="racial_bonus(this,2);"></span>0</td>
+			<td class="_tota" id="con_total">10</td>
+			<td class="_tmod" id="con_tmod">0</td>
+		</tr>
+		<!-- Intelligence -->
+		<tr>
+			<td class="ability_title">Intelligence</td>
+			<td><input class="spinner" name="int" id="int" value="10"></td>
+			<td class="_cost" id="int_cost">1</td>
+
+			<td class="_bmod" id="int_bmod">0</td>
+			<td class="_rbon" id="int_rbon"><span class="bonus_button" onclick="racial_bonus(this,3);"></span>0</td>
+			<td class="_tota" id="int_total">10</td>
+			<td class="_tmod" id="int_tmod">0</td>
+		</tr>
+		<!-- Wisdom -->
+		<tr>
+			<td class="ability_title">Wisdom</td>
+			<td><input class="spinner" name="wis" id="wis" value="10"></td>
+			<td class="_cost" id="wis_cost">1</td>
+
+			<td class="_bmod" id="wis_bmod">0</td>
+			<td class="_rbon" id="wis_rbon"><span class="bonus_button" onclick="racial_bonus(this,4);"></span>0</td>
+			<td class="_tota" id="wis_total">10</td>
+			<td class="_tmod" id="wis_tmod">0</td>
+		</tr>
+		<!-- Charisma -->
+		<tr>
+			<td class="ability_title">Charisma</td>
+			<td><input class="spinner" name="cha" id="cha" value="10"></td>
+			<td class="_cost" id="cha_cost">1</td>
+
+			<td class="_bmod" id="cha_bmod">0</td>
+			<td class="_rbon" id="cha_rbon"><span class="bonus_button" onclick="racial_bonus(this,5);"> </span>0</td>
+			<td class="_tota" id="cha_total">10</td>
+			<td class="_tmod" id="cha_tmod">0</td>
+		</tr>
+	</table>	
+
+	<br/>
+
+	<div id="reset_holder">
+		<span id="race_message"></span>
+		<br/><br/>
+		<span id="reset_button" onclick="reset_points();" >Reset</span>
+		<span style="font-weight: bold;font-size: 1.15em;" class="reset_elements" >Points Remaining: <span id="remain">15</span></span>
+		<span style="font-weight: bold;font-size: 1.15em;">Points Spent: <span id="spent">0</span></span>
+	</div>
+
+
+
+
+</div>

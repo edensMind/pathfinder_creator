@@ -1,0 +1,1 @@
+weapon_mods = [['Brutally weighted', '+1,500 gp', '+1 lb.'],['Dual-balanced', '+2,000 gp', '-'],['Jagged hooks', '+1,000 gp', '+1 lb.'],['Razor-sharp', '+1,000 gp', '-'],['Serrated edge', '+2,000 gp', '-'],['Tactically adapted', '+2,000 gp', '-'],['Versatile design', '+500 gp', '-']]

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+<title>Pathfinder Character Creator</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='creation.css') }}">
+
+<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+
+<!-- SPINNER Packages -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery-ui-1.12.1.custom/jquery-ui.min.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery-ui-1.12.1.custom/jquery-ui.structure.min.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery-ui-1.12.1.custom/jquery-ui.theme.min.css') }}">
+
+
+
+
+<style>
+	.tab {
+		display: none;
+	}
+
+</style>
+</head>
+<body>
+
+<div id="bg"></div>
+
+<!-- get banner -->
+{% include 'banner.html' %}
+
+
+<!-- define form -->
+<form action="{{ url_for('results') }}" method="POST">
+
+<!-- TAB 1 - Details ---------------------------------------------------------------->
+<div class="tab" id="intro">
+	<h1>Pathfinder Character Creation</h1>
+
+		<br>
+	<div id="intro_text">
+	<p>
+		
+		<b class="intro_step">Step 1 - Pick Your Race:</b> Next, pick your character's race, noting any modifiers to your ability scores and any other racial traits (see Races). There are seven basic races to choose from, although your GM might have others to add to the list. Each race lists the languages your character automatically knows, as well as a number of bonus languages. A character knows a number of additional bonus languages equal to his or her Intelligence modifier.
+		<br>
+		<br>
+		<b class="intro_step">Step 2 - Determine Ability Scores:</b> Start by generating your character's ability scores. These six scores determine your character's most basic attributes and are used to decide a wide variety of details and statistics. Some class selections require you to have better than average scores for some of your abilities.
+		<br>
+		<br>
+		<b class="intro_step">Step 3 - Pick Your Class:</b> A character's class represents a profession, such as fighter or wizard. If this is a new character, he starts at 1st level in his chosen class. As he gains experience points (XP) for defeating monsters, he goes up in level, granting him new powers and abilities.
+		<br>
+		<br>
+		<b class="intro_step">Step 4 - Pick Skills and Select Feats:</b> Determine the number of skill ranks possessed by your character, based on his class and Intelligence modifier (and any other bonuses, such as the bonus received by humans). Then spend these ranks on skills, but remember that you cannot have more ranks than your level in any one skill (for a starting character, this is usually one). After skills, determine how many feats your character receives, based on his class and level, and select them from those presented in Feats.
+		<br>
+		<br>
+		<b class="intro_step">Step 5 - Buy Equipment:</b> Each new character begins the game with an amount of gold, based on his class, that can be spent on a wide range of equipment and gear, from chainmail armor to leather backpacks. This gear helps your character survive while adventuring. Generally speaking, you cannot use this starting money to buy magic items without the consent of your GM.
+		<br>
+		<br>
+		<b class="intro_step">Step 6 - Finishing Details:</b> You need to decide on your character's alignment, age, height and weight, and physical appearance. It is best to jot down a few personality traits as well, to help you play the character during the game.
+		<br>
+		<br>
+	</p>
+	</div>
+
+			<br>
+		<br>
+
+	<div id="enter_name">
+		<span id="race_title">Enter Your Hero's Name </span>
+		<input type="text" id="name_tb" name="name" value="">
+	</div>
+
+			<br>
+		<br>
+
+</div>
+
+
+
+<!-- TAB 2 - Race -------------------------------------------------------------------->
+{% include 'race.html' %}
+
+
+<!-- TAB 3 - Ability Score ---------------------------------------------------------------->
+{% include 'ability_scores.html' %}
+
+
+<!-- TAB 4 - Class -------------------------------------------------------------------->
+{% include 'class.html' %}
+
+
+<!-- TAB 5 - Skills -------------------------------------------------------------------->
+<div class="tab" id="race">
+	<h1>5</h1>
+
+		5:<br>
+		<input type="text" name="race" value="">
+		<br>
+		<br>
+</div>
+
+<!-- TAB 6 - Equipment -------------------------------------------------------------------->
+{% include 'equipment.html' %}
+
+<!-- TAB 7 - 7 -------------------------------------------------------------------->
+<div class="tab" id="race">
+	<h1>7</h1>
+
+		7:<br>
+		<input type="text" name="race" value="">
+		<br>
+		<br>
+</div>
+
+
+
+<!-- Navigation ------------------------------------------------------------------->
+<div id="nav" style="text-align:center;margin-top:40px;">
+
+	<!-- step circles -->
+	<div class="tooltip"><span class="step" onclick="navigate(1);"></span> <span class="tooltiptext">Name</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(2);"></span> <span class="tooltiptext">Race</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(3);"></span> <span class="tooltiptext">Ability Scores</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(4);"></span> <span class="tooltiptext">Class</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(5);"></span> <span class="tooltiptext">Skills and Feats</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(6);"></span> <span class="tooltiptext">Buy Equipment</span></div>
+	<div class="tooltip"><span class="step" onclick="navigate(7);"></span> <span class="tooltiptext">Finishing Details</span></div>
+
+	<br/><br/>
+
+	<div id="next_prev"><!-- buttons -->
+		<a href="#" class="myButton" onclick="nav_button('p');">Prev</a>
+		<a href="#" class="myButton" onclick="nav_button('n');">Next</a>
+		<input type="submit" class="myButton" value="Create">
+	</div>
+	<br/><br/>
+</form> 
+</div>
+
+
+<!-- Race Scripts -->
+<script src="{{ url_for('static', filename='race.js') }}"></script>
+
+<!-- Class Scripts -->
+<script src="{{ url_for('static', filename='wiz_class.js') }}"></script>
+<script src="{{ url_for('static', filename='bloodline.js') }}"></script>
+<script src="{{ url_for('static', filename='class.js') }}"></script>
+
+<!-- Navigation scripts ----------------------------------------------------------------- -->
+<script type="text/javascript">
+
+// get tabs
+var tabs = document.getElementsByClassName("tab");
+
+// get step buttons
+var steps = document.getElementsByClassName("step");
+
+// activate first tab/step on page load and set as current
+tabs[0].style.display = "block";
+steps[0].style.opacity = "1";
+var current = 1;
+
+// set buttons
+var buttons = document.getElementsByClassName("myButton");
+
+buttons[0].style.display = "none";
+buttons[2].style.display = "none";
+
+//bg counter
+bg_count = 0;
+
+// get bg filenames
+var bg_files = ["dark_alley.jpg", "dwarf_rogue.jpg", "dwarf_warrior.jpg", "witch.jpg", "sorceress.jpg"];
+
+// function to change background
+function change_bg(num) {
+	$('body').css("background","url(static/bg/"+bg_files[num]+") no-repeat top center fixed");
+	$('body').css("background-size", "cover");
+}
+
+// only load racial bonus on tab navigation the first time
+var do_it_first_time = true;
+
+// function to change tabs
+function navigate(tab) {
+
+	if (tab == current) {
+		console.log("Already on that tab.");
+	}
+	else {
+
+		// set buttons
+		if (tab == 1) {
+			buttons[0].style.display = "none";
+			buttons[1].style.display = "inline-block";
+			buttons[2].style.display = "none";
+		}
+
+		if (tab > 1) {
+			buttons[0].style.display = "inline-block";
+			buttons[1].style.display = "inline-block";
+			buttons[2].style.display = "none";
+		}
+
+		if (tab == 7) {
+			buttons[0].style.display = "inline-block";
+			buttons[1].style.display = "none";
+			buttons[2].style.display = "inline-block";
+		}		
+
+		// make tabs invisible
+		for (var i =0; i < tabs.length; i++) {
+			tabs[i].style.display = "none";
+		}
+
+		// set steps to un-active
+		for (var i =0; i < tabs.length; i++) {
+			steps[i].style.opacity = "0.5";
+		}
+		// show selected tab and make step active
+		tabs[tab - 1].style.display = "block";
+		steps[tab - 1].style.opacity = "1";
+
+		// set new current value
+		current = tab;
+
+		//change bg
+		change_bg(bg_count);
+		if(bg_count == bg_files.length-1) {
+			bg_count = 0;
+		}
+		else {
+			bg_count += 1;
+		}
+
+		// check for name - set it on banner
+		//  - name container
+		var banner_name = $("#banner_name");
+
+		// - name textbox
+		var name_text = $("#name_tb").val(); 
+
+		banner_name.text(name_text);
+		console.log(name_text);
+
+		//set race on banner
+		if (tab == 2) {
+			set_race_banner();
+		}
+
+		//get race for bonus - ability score page
+		if (tab == 3 && do_it_first_time == true) {
+
+			console.log("get_race_bonus - changing to tab 3 function");
+			get_race_bonus();
+
+			do_it_first_time = false;
+		}
+
+		//set class on banner
+		if (tab == 4) {
+			set_class_banner();
+		}
+
+	}
+}
+
+// Previous and Next Buttons
+function nav_button(d) {
+
+	// handle next button
+	if (d == 'n') {
+		if (current >= tabs.length) {
+			console.log("Reached End");
+		}
+		else {
+			navigate(current+1);
+			console.log(current);
+		}
+	}
+	// handle previous button
+	else {
+		navigate(current-1);
+		console.log(current);
+		
+	}
+}
+
+</script>
+
+
+<!-- Ability Scores Scripts -->
+<script src="{{ url_for('static', filename='jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+
+<script>
+	$( function() {
+		var spinner = $( ".spinner" ).spinner({ min: 7, max: 18});
+	} );
+</script>
+<script src="{{ url_for('static', filename='ability_scores.js') }}"></script>
+
+
+
+</body>
+</html>

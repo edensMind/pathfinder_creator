@@ -1,0 +1,45 @@
+<div class="tab" id="equipment">
+	<h1>Equipment</h1>
+
+	<span>Light Armor</span>
+	<select name="light_armor">
+		<option value="none">none</option>
+		{% for i in light_armor %}
+			<option value="{{ i[0] }}">{{ i[0] }}</option>
+		{% endfor %}
+	</select><br/>
+
+	<span>Medium Armor</span>
+	<select name="medium_armor">
+		<option value="none">none</option>
+		{% for i in medium_armor %}
+			<option value="{{ i[0] }}">{{ i[0] }}</option>
+		{% endfor %}
+	</select><br/>
+
+	<span>Heavy Armor</span>
+	<select name="heavy_armor">
+		<option value="none">none</option>
+		{% for i in heavy_armor %}
+			<option value="{{ i[0] }}">{{ i[0] }}</option>
+		{% endfor %}
+	</select><br/>
+
+	<span>Shields</span>
+	<select name="shields">
+		<option value="none">none</option>
+		{% for i in shields %}
+			<option value="{{ i[0] }}">{{ i[0] }}</option>
+		{% endfor %}
+	</select><br/>
+
+	<span>Armor Modifications</span>
+	<select name="armor_mods">
+		<option value="none">none</option>
+		{% for i in armor_mods %}
+			<option value="{{ i[0] }}">{{ i[0] }}</option>
+		{% endfor %}
+	</select><br/>
+
+</div>
+
